@@ -2,13 +2,22 @@
   "name": "auto-scope",
   "version": "0.2.0",
   "description": "A compiler for CSS/HTML/JS that adds number suffixes to classes to prevent collisions.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Marco Enrique Zimmermann",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^24.2.0",
     "typescript": "^5.9.2"
   }
 }
